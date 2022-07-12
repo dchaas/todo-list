@@ -1,3 +1,56 @@
-h1 {
-    color: red;
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: clamp(200px,30vw,400px) 70vw;
+    grid-template-rows: auto;
+}
+
+.sidebar {
+    background-color: #EEEEEE;
+    height: 100vh;
+    /* border: solid 1px #393E46; */
+    box-shadow: 1px 1px 5px gray;
+    
+}
+
+#sidebar-title {
+    font-weight: 600;
+    background-color: #00ADB5;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px #222831;
+    border-bottom: solid 1px #222831;
+}
+
+.project-head {
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+.project-head:hover {
+    color: white;
+    background-color: #00ADB5;
+}
+
+.project-head:hover::after {
+    content: " +";
+}
+
+
+.project-ul {
+    margin-top: 5px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.1s ease-out;
+}
+
+.content {
+    
 }
