@@ -22,6 +22,25 @@
             </div>
 
             <div class="content">
+                <div class="todo-title">Task # 1</div>
+                <div class="todo-body">
+                    <form action="./" class="todo-form">
+                        <label for="title">Title</label>
+                        <input type="text" name="title">
+                        <label for="description">Description</label>
+                        <textarea name="description" rows="6" cols="40"></textarea>
+                        <label for="due-date">Date Due</label> 
+                        <input type="date" name="due-date">
+                        <label for="priority">Priority</label>
+                        <input type="number" min="0" max="5" name="priority">
+                        <label for="complete">Complete</label>
+                        <input type="checkbox" name="complete">
+                        
+                    </form>
+                    
+                    <button class="edit-btn" type="button">Edit</button>
+                </div>
+                <div class="footer">Copyright Big D - 2022</div>
             </div>
 
             <form class="new-project-form" action="./">

@@ -6,7 +6,8 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: clamp(200px,30vw,400px) 70vw;
+    /* grid-template-columns: clamp(200px,30vw,400px) 70vw; */
+    grid-template-columns: 25vw 75vw;
     grid-template-rows: auto;
 }
 
@@ -17,6 +18,7 @@ body {
     box-shadow: 1px 1px 5px gray;
     display: flex;
     flex-direction: column;
+    z-index: 5;
     
 }
 
@@ -94,5 +96,49 @@ body {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     
 }
+
+.todo-title {
+    background-color: #393E46;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    border-bottom: solid 2px #222831;
+}
+
+.todo-body {
+    background-image: radial-gradient(#F0EBE3,#EEEEEE);
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.todo-form {
+    display: grid;
+    grid-template-columns: 30% 40%;
+    gap: 15px;
+}
+
+.footer {
+    background-color: #222831;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    grid-column: 1/2;
+}
+

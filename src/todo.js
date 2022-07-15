@@ -1,4 +1,4 @@
-let Todo = (title,description,dueDate,priority,notes,checklist) => {
+let Todo = (title,description,dueDate,priority,notes,complete) => {
 
     //const getTitle = () => title;
     //const setTitle = (str) => title;
@@ -7,7 +7,7 @@ let Todo = (title,description,dueDate,priority,notes,checklist) => {
         console.log(`Task ${title} is due on ${dueDate}`);
     };
 
-    return {title,description,dueDate,priority,notes,checklist,printDetails};
+    return {title,description,dueDate,priority,notes,complete,printDetails};
 };
 
 let Todos = () => {
@@ -47,7 +47,9 @@ export const Projects = (()=>{
         if (projects.hasOwnProperty(title)) {
             deleteProject(title);
         } else {
-            addProject(title,todos);
+            if (title!=='') {
+                addProject(title,todos);
+            }
         }
 
     }

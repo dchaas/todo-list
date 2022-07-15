@@ -1,6 +1,6 @@
 import './styles.css';
 import {Todo,Todos,Projects} from './todo.js';
-import {renderSideBar} from './render.js';
+import {renderSideBar,renderFooter, renderToDo} from './render.js';
 
 
 //const projectHead = document.querySelector('.project-head');
@@ -12,10 +12,10 @@ Projects.addProject('Default',Todos());
 Projects.getProjects()['Default'].addToDo(Todo('Default 1','I must do it','tomorrow','high','notes','checklist'));
 
 // adding some additional content for checking it out
-let todo1 = Todo('Todo 1','I must do it','tomorrow','high','notes','checklist');
-let todo2 = Todo('Todo 2','I must do it','tomorrow','high','notes','checklist');
-let todo3 = Todo('Todo 3','I must do it','tomorrow','high','notes','checklist');
-let todo4 = Todo('Todo 4','I must do it','tomorrow','high','notes','checklist');
+let todo1 = Todo('Todo 1','I must do it','2022-09-18','3','notes',true);
+let todo2 = Todo('Todo 2','I must do it','2022-09-18','4','notes',false);
+let todo3 = Todo('Todo 3','I must do it','2022-09-18','high','notes',false);
+let todo4 = Todo('Todo 4','I must do it','2022-09-18','high','notes',false);
 
 let todos = Todos();
 
@@ -36,3 +36,5 @@ todos.addToDo(todo4);
 console.log(Projects.getProjects()['Home'].getToDos());
 
 renderSideBar(Projects);
+renderFooter();
+renderToDo(todo1);
