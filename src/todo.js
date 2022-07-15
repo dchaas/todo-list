@@ -43,9 +43,18 @@ export const Projects = (()=>{
         delete projects[title];
     };
 
+    const addRemoveProject = (title,todos) => {
+        if (projects.hasOwnProperty(title)) {
+            deleteProject(title);
+        } else {
+            addProject(title,todos);
+        }
+
+    }
+
     const getProjects = () => projects;
 
-    return {projects,getProjects,addProject,deleteProject};
+    return {getProjects,addProject,deleteProject,addRemoveProject};
 
 })();
 

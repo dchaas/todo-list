@@ -15,6 +15,8 @@ body {
     height: 100vh;
     /* border: solid 1px #393E46; */
     box-shadow: 1px 1px 5px gray;
+    display: flex;
+    flex-direction: column;
     
 }
 
@@ -49,6 +51,46 @@ body {
     overflow: hidden;
     max-height: 0px;
     transition: max-height 0.1s ease-out;
+}
+
+
+.new-project, #add-remove-project {
+    align-self: center;
+    font-size: 1.5rem;
+    background-color: #00ADB5;
+    color: white;
+    border: solid 2px #222831;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 1px 1px 8px  #222831;
+}
+
+.new-project:hover, #add-remove-project:hover {
+    background-color: #04838a;
+}
+
+.new-project:active, #add-remove-project:active {
+    background-color: #00ADB5;
+}
+
+.new-project-form {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    background-color: #EEEEEE;
+    box-shadow: 1px 1px 5px #222831;
+    border-radius: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#add-remove-project {
+    font-size: 1rem;
 }
 
 .content {

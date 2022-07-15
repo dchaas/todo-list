@@ -11,17 +11,24 @@
         <div class="container">
             <div class="sidebar">
                 <h1 id="sidebar-title">Just To-Do It</h1>
-                <div clsss="projects">
-                    <h3 class="project-head">Defaults</h2>
+                <div class="projects">
+                    <!-- <h3 class="project-head">Defaults</h2>
                     <ul class="project-ul">
                         <li class="project-li">Eat Breakfast</li>
                         <li class="project-li">Do Work</li>
-                    </ul>
+                    </ul> -->
                 </div>
+                <button class="new-project" type="button">+/- Project</button>
             </div>
 
             <div class="content">
             </div>
+
+            <form class="new-project-form" action="./">
+                <label for="project-name">Project Name</label>
+                <input type="text" name="project-name">
+                <button id="add-remove-project" type="button">Add/Remove</button>
+            </form>
         </div>
 
     <script src="main.js"></script>

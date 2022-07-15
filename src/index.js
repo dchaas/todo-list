@@ -1,21 +1,17 @@
 import './styles.css';
 import {Todo,Todos,Projects} from './todo.js';
+import {renderSideBar} from './render.js';
 
-// animate the to-dos
-function expandProject(event) {
-    let child = event.target.nextElementSibling;
-     if (child.style.maxHeight){
-        child.style.maxHeight = null;
-          } else {
-            child.style.maxHeight = child.scrollHeight + "px";
-          } 
-}
 
-const projectHead = document.querySelector('.project-head');
+//const projectHead = document.querySelector('.project-head');
 //const projectUL = document.querySelector('.project-ul');
 
-projectHead.addEventListener('click',expandProject);
+// create the default project for initial population of the DOM
+Projects.addProject('Default',Todos());
 
+Projects.getProjects()['Default'].addToDo(Todo('Default 1','I must do it','tomorrow','high','notes','checklist'));
+
+// adding some additional content for checking it out
 let todo1 = Todo('Todo 1','I must do it','tomorrow','high','notes','checklist');
 let todo2 = Todo('Todo 2','I must do it','tomorrow','high','notes','checklist');
 let todo3 = Todo('Todo 3','I must do it','tomorrow','high','notes','checklist');
@@ -34,7 +30,9 @@ console.log(todos.removeToDo(todo2));
 console.log(todos.getToDos());
 
 Projects.addProject('Home',todos);
-console.log(Projects.projects['Home'].getToDos());
+console.log(Projects.getProjects()['Home'].getToDos());
 
 todos.addToDo(todo4);
-console.log(Projects.projects['Home'].getToDos());
+console.log(Projects.getProjects()['Home'].getToDos());
+
+renderSideBar(Projects);
