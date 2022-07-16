@@ -31,14 +31,18 @@
                         <textarea name="description" rows="6" cols="40"></textarea>
                         <label for="due-date">Date Due</label> 
                         <input type="date" name="due-date">
+                        <label for="">Days remaining</label>
+                        <div id="time-left">5</div>
                         <label for="priority">Priority</label>
                         <input type="number" min="0" max="5" name="priority">
                         <label for="complete">Complete</label>
                         <input type="checkbox" name="complete">
                         
                     </form>
-                    
-                    <button class="edit-btn" type="button">Edit</button>
+                    <div class="btn-grp">
+                        <button class="edit-btn" type="button">Edit</button>
+                        <button class="delete-btn" type="button">Delete</button>
+                    </div>
                 </div>
                 <div class="footer">Copyright Big D - 2022</div>
             </div>

@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 5;
+    cursor: grab;
     
 }
 
@@ -122,12 +123,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .todo-form {
     display: grid;
-    grid-template-columns: 30% 40%;
+    grid-template-columns: 40% 40%;
     gap: 15px;
+}
+
+input, textarea {
+    font-family: 'Lato',sans-serif;
+    font-size: 1rem;
 }
 
 .footer {
@@ -142,3 +150,29 @@ label {
     grid-column: 1/2;
 }
 
+.new-to-do{
+    color: #00ADB5;
+}
+
+.btn-grp {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.edit-btn, .delete-btn {
+    width: 30%;
+        font-size: 1rem;
+}
+
+.edit-btn {
+    background-color: rgb(139, 233, 139);
+}
+
+.delete-btn {
+    background-color: rgb(233, 150, 139);
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}

@@ -13,9 +13,9 @@ Projects.getProjects()['Default'].addToDo(Todo('Default 1','I must do it','tomor
 
 // adding some additional content for checking it out
 let todo1 = Todo('Todo 1','I must do it','2022-09-18','3','notes',true);
-let todo2 = Todo('Todo 2','I must do it','2022-09-18','4','notes',false);
-let todo3 = Todo('Todo 3','I must do it','2022-09-18','high','notes',false);
-let todo4 = Todo('Todo 4','I must do it','2022-09-18','high','notes',false);
+let todo2 = Todo('Todo 2','I must do it','2022-07-20','4','notes',false);
+let todo3 = Todo('Todo 3','I must do it','2022-07-25','2','notes',false);
+let todo4 = Todo('Todo 4','I must do it','2022-09-18','5','notes',false);
 
 let todos = Todos();
 
