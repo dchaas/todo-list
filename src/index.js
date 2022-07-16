@@ -6,10 +6,11 @@ import {renderSideBar,renderFooter, renderToDo} from './render.js';
 //const projectHead = document.querySelector('.project-head');
 //const projectUL = document.querySelector('.project-ul');
 
-// create the default project for initial population of the DOM
+// create the default and completed projects for initial population of the DOM
+Projects.addProject('Completed',Todos());
 Projects.addProject('Default',Todos());
+Projects.getProjects()['Default'].addToDo(Todo('Default 1','I must do it','2022-08-01','1','notes','checklist'));
 
-Projects.getProjects()['Default'].addToDo(Todo('Default 1','I must do it','tomorrow','high','notes','checklist'));
 
 // adding some additional content for checking it out
 let todo1 = Todo('Todo 1','I must do it','2022-09-18','3','notes',true);
@@ -37,4 +38,4 @@ console.log(Projects.getProjects()['Home'].getToDos());
 
 renderSideBar(Projects);
 renderFooter();
-renderToDo(todo1);
+//renderToDo(todo1);

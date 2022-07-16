@@ -73,7 +73,23 @@ let renderSideBar = function(projects) {
         allProjects[project].getToDos().forEach(todo => {
             const todoLi = document.createElement('li');
             todoLi.classList.add('project-li');
-            todoLi.innerHTML = `${todo.title}`;
+
+            const today = new Date();
+            let due = new Date(todo.dueDate);
+            let remain = parseInt((due - today)/(1000*60*60*24),10);
+
+            if (project==='Completed') {
+                todoLi.innerHTML = `${todo.title}`;
+                todoLi.classList.add('completed');
+            } else {
+                todoLi.innerHTML = `${todo.title} (${remain} days)`;
+                if (parseInt(todo.priority)>3 || (remain<5)) {
+                    todoLi.classList.add('high-priority');
+                } else if (parseInt(todo.priority)>2 || (remain<15)) {
+                    todoLi.classList.add('med-priority');
+                }
+            }
+            
             todoLi.addEventListener('click',function(){
                 renderToDo(todo,project,allProjects);
             });
@@ -82,7 +98,7 @@ let renderSideBar = function(projects) {
 
         const newToDoBtn = document.createElement('button');
         newToDoBtn.classList.add('new-to-do');
-        newToDoBtn.textContent = "+";
+        newToDoBtn.textContent = "Add...";
         newToDoBtn.addEventListener('click',function(){
             let newTodo = Todo('','','','0','',false);
             projects.getProjects()[project].addToDo(newTodo);
@@ -149,6 +165,12 @@ let renderToDo = function(todo,project,allProjects) {
         todo.dueDate = dueDate.value;
         todo.priority = priority.value;
         todo.complete = completed.checked;
+
+        if (todo.complete) {
+            allProjects['Completed'].addToDo(todo);
+            allProjects[project].removeToDo(todo);    
+        }
+
         renderSideBar(Projects);
         renderToDo(todo,project,allProjects);
     });

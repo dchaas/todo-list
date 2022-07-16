@@ -152,6 +152,9 @@ label {
 
 .new-to-do{
     color: #00ADB5;
+    border: none;
+    outline: none;
+    cursor: grab;
 }
 
 .btn-grp {
@@ -175,4 +178,17 @@ label {
 
 .edit-btn:hover, .delete-btn:hover {
     opacity: 0.8;
+}
+
+.completed {
+    list-style-type: none;
+    color: green;
+}
+
+.high-priority {
+    color: rgb(243, 104, 104);
+}
+
+.med-priority {
+    color: rgb(204, 152, 55);
 }
