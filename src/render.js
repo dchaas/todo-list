@@ -23,6 +23,7 @@ const buttons = (()=>{
         newProjName.value = '';
         
         renderSideBar(Projects);
+        setLocalStorage();
     });
         
 
@@ -173,15 +174,46 @@ let renderToDo = function(todo,project,allProjects) {
 
         renderSideBar(Projects);
         renderToDo(todo,project,allProjects);
+        setLocalStorage();
     });
 
 
     deleteBtn.addEventListener('click',function(){
         allProjects[project].removeToDo(todo);
         renderSideBar(Projects);
+        setLocalStorage();
     });
 
 
 };
 
-export {renderSideBar,renderFooter,renderToDo,buttons};
+
+// local storage rendering
+function getLocalStorage() {
+    let projectList = JSON.parse(window.localStorage.getItem('projects'));
+
+    console.log(projectList);
+
+    projectList.forEach(project=>{
+        // get the todos list
+        let todos = Todos();
+        let savedTodos = JSON.parse(window.localStorage.getItem(project));
+        todos.setToDos(savedTodos);
+        Projects.addProject(project,todos);
+    });
+}
+
+function setLocalStorage() {
+    let allProjects = Projects.getProjects();
+    console.log(allProjects);
+    let projectList = [];
+    for (let project in allProjects)  {
+        projectList.push(project);
+        let toSave = JSON.stringify(allProjects[project].getToDos());
+        window.localStorage.setItem(project, toSave);    
+    };
+
+    window.localStorage.setItem('projects',JSON.stringify(projectList));
+}
+
+export {renderSideBar,renderFooter,renderToDo,getLocalStorage,setLocalStorage,buttons};

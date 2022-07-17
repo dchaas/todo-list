@@ -25,9 +25,13 @@ let Todos = () => {
         //todos = todos.splice(0,id-1).concat(todos.splice(id+1));
         todos = todos.filter(td => td.title!==todo.title);
     };
+    
     const getToDos = () => todos;
+    const setToDos = (tds) => {
+        todos = tds;
+    };
 
-    return {getToDos, addToDo,removeToDo};
+    return {getToDos, setToDos, addToDo,removeToDo};
 
 };
 
@@ -55,8 +59,9 @@ export const Projects = (()=>{
     }
 
     const getProjects = () => projects;
+    const setProjects = (ps) => projects=ps;
 
-    return {getProjects,addProject,deleteProject,addRemoveProject};
+    return {getProjects,setProjects,addProject,deleteProject,addRemoveProject};
 
 })();
 
